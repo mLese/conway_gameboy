@@ -448,7 +448,7 @@ ComputeNextGeneration:
         jr nz, .dead         ; If not 2, cell dies (< 2 underpopulation, > 3 overpop)
 
         ; If count == 2, cell survives ONLY if it's currently alive
-        push af              ; Save the neighbor count and flags
+        push af              ; Save the neighbor count
         ld a, [de]           ; Read current cell state from CurrentGen
         or a                 ; Check if alive (nonzero)
         jr z, .deadPop       ; If cell is dead (0) with 2 neighbors -> stays dead
